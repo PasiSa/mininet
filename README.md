@@ -4,7 +4,7 @@ Mininet: Rapid Prototyping for Software Defined Networks
 
 Mininet 2.3.1b4
 
-[![Build Status][1]](https://github.com/mininet/mininet/actions)
+[![Build Status][1]](https://github.com/kctong529/mininet/actions)
 
 
 ### What is Mininet?
@@ -139,4 +139,4 @@ to change the networking world.
 Bob Lantz,
 on behalf of the Mininet Contributors
 
-[1]: https://github.com/mininet/mininet/workflows/mininet-tests/badge.svg
+[1]: https://github.com/kctong529/mininet/workflows/mininet-tests/badge.svg

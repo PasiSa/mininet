@@ -1,4 +1,3 @@
-
 name: code-check
 
 on: [push, pull_request]
@@ -9,14 +8,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.x
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.x
+          python-version: '3.10'
+          
       - name: Check out Mininet source
-        uses: actions/checkout@v2
-      - name: Install Mininet code check dependencies
+        uses: actions/checkout@v4
+        
+      - name: Install system dependencies
         run: |
-          PYTHON=`which python` util/install.sh -n
-          python -m pip install pylint==2.15.7
+          sudo apt-get update
+          sudo apt-get install -y python3-venv python3-dev help2man openvswitch-switch openvswitch-common
+          
+      - name: Install Mininet and check dependencies
+        run: |
+          sudo PYTHON=python3 make install
+          
+          # Install additional tools for code checking
+          python3 -m pip install pylint==2.15.7 flake8 pyflakes pep8
+          
       - name: Run code check
-        run:  make codecheck
+        run: |
+          # Activate the virtual environment if it exists
+          if [ -d "mininet-venv" ]; then
+            source mininet-venv/bin/activate
+          fi
+          
+          # Run the code checks
+          make codecheck || (echo "Code check failed!" && exit 1)
+          
+      - name: Verify Mininet installation
+        run: |
+          # Activate the virtual environment if it exists
+          if [ -d "mininet-venv" ]; then
+            source mininet-venv/bin/activate
+          fi
+
+          # Verify mn command is available
+          which mn || (echo "mn command not found!" && exit 1)
+          sudo env PATH=$PATH mn
+      

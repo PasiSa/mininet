@@ -280,7 +280,7 @@ class TCIntf( Intf ):
                           'target 20ms interval 100ms ' +
                           'bandwidth %fmbit probability 1 ecn' % bw ]
                 # This was the original code:
-                #cmds += [ '%s qdisc add dev %s' + parent +
+                # cmds += [ '%s qdisc add dev %s' + parent +
                 #          'handle 6: red limit 1000000 ' +
                 #          'min 30000 max 35000 avpkt 1500 ' +
                 #          'burst 20 ' +
