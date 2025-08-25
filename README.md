@@ -1,22 +1,21 @@
-Mininet: Rapid Prototyping for Software Defined Networks
-========================================================
-*The best way to emulate almost any network on your laptop!*
+# Mininet: Rapid Prototyping for Software Defined Networks
+
+_The best way to emulate almost any network on your laptop!_
 
 Mininet 2.3.1b4
 
-[![Build Status][1]](https://github.com/kctong529/mininet/actions)
-
+[![Build Status][1]](https://github.com/PasiSa/mininet/actions)
 
 ### What is Mininet?
 
 Mininet emulates a complete network of hosts, links, and switches
-on a single machine.  To create a sample two-host, one-switch network,
+on a single machine. To create a sample two-host, one-switch network,
 just run:
 
-  `sudo mn`
+`sudo mn`
 
 Mininet is useful for interactive development, testing, and demos,
-especially those using OpenFlow and SDN.  OpenFlow-based network
+especially those using OpenFlow and SDN. OpenFlow-based network
 controllers prototyped in Mininet can usually be transferred to
 hardware with minimal changes for full line-rate execution.
 
@@ -24,13 +23,13 @@ hardware with minimal changes for full line-rate execution.
 
 Mininet creates virtual networks using process-based virtualization
 and network namespaces - features that are available in recent Linux
-kernels.  In Mininet, hosts are emulated as `bash` processes running in
+kernels. In Mininet, hosts are emulated as `bash` processes running in
 a network namespace, so any code that would normally run on a Linux
 server (like a web server or client program) should run just fine
-within a Mininet "Host".  The Mininet "Host" will have its own private
-network interface and can only see its own processes.  Switches in
+within a Mininet "Host". The Mininet "Host" will have its own private
+network interface and can only see its own processes. Switches in
 Mininet are software-based switches like Open vSwitch or the OpenFlow
-reference switch.  Links are virtual ethernet pairs, which live in the
+reference switch. Links are virtual ethernet pairs, which live in the
 Linux kernel and connect our emulated switches to emulated hosts
 (processes).
 
@@ -38,23 +37,23 @@ Linux kernel and connect our emulated switches to emulated hosts
 
 Mininet includes:
 
-* A command-line launcher (`mn`) to instantiate networks.
+- A command-line launcher (`mn`) to instantiate networks.
 
-* A handy Python API for creating networks of varying sizes and
+- A handy Python API for creating networks of varying sizes and
   topologies.
 
-* Examples (in the `examples/` directory) to help you get started.
+- Examples (in the `examples/` directory) to help you get started.
 
-* Full API documentation via Python `help()` docstrings, as well as
+- Full API documentation via Python `help()` docstrings, as well as
   the ability to generate PDF/HTML documentation with `make doc`.
 
-* Parametrized topologies (`Topo` subclasses) using the Mininet
-  object.  For example, a tree network may be created with the
+- Parametrized topologies (`Topo` subclasses) using the Mininet
+  object. For example, a tree network may be created with the
   command:
 
   `mn --topo tree,depth=2,fanout=3`
 
-* A command-line interface (`CLI` class) which provides useful
+- A command-line interface (`CLI` class) which provides useful
   diagnostic commands (like `iperf` and `ping`), as well as the
   ability to run a command to a node. For example,
 
@@ -62,7 +61,7 @@ Mininet includes:
 
   tells host h11 to run the command `ifconfig -a`
 
-* A "cleanup" command to get rid of junk (interfaces, processes, files
+- A "cleanup" command to get rid of junk (interfaces, processes, files
   in /tmp, etc.) which might be left around by Mininet or Linux. Try
   this if things stop working!
 
@@ -73,8 +72,8 @@ Mininet includes:
 - Mininet 2.3.1b4 supports Python 3 and Python 2
 
 - You can install both the Python 3 and Python 2 versions of
-Mininet side by side, but the most recent installation will
-determine which Python version is used by default by `mn`.
+  Mininet side by side, but the most recent installation will
+  determine which Python version is used by default by `mn`.
 
 - You can run `mn` directly with Python 2 or Python 3,
   as long as the appropriate version of Mininet is installed,
@@ -139,4 +138,4 @@ to change the networking world.
 Bob Lantz,
 on behalf of the Mininet Contributors
 
-[1]: https://github.com/kctong529/mininet/workflows/mininet-tests/badge.svg
+[1]: https://github.com/PasiSa/mininet/workflows/mininet-tests/badge.svg
